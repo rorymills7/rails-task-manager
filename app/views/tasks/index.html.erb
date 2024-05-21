@@ -1,0 +1,19 @@
+
+<h1 class="mb-5">Tasks Index</h1>
+
+<ul class="mb-5 form-check">
+  <% @tasks.each do |task|%>
+
+<% if task.completed == true  %>
+
+  <input class="form-check-input big-checkbox" type="checkbox" value="" id="flexCheckDefault" checked>
+  <% else %>
+  <input class="form-check-input big-checkbox" type="checkbox" value="" id="flexCheckDefault">
+  <% end %>
+  <%= link_to task.title, task_path(task), class:"fs-5 p-0 text-decoration-none text-black"%> </p>
+  <% end %>
+
+
+</ul>
+
+<%= link_to "Create a new task!", task_new_path, class: 'btn btn-primary' %>
